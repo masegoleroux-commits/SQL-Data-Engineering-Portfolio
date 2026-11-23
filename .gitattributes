@@ -1,0 +1,24 @@
+# SQL scripts use Windows line endings, which SSMS and sqlcmd expect.
+*.sql   text eol=crlf
+*.ps1   text eol=crlf
+
+# Data files are kept byte for byte. BULK INSERT row terminators, fixed-width
+# record lengths and checksums depend on the exact bytes, so Git must never
+# convert their line endings.
+*.csv     -text
+*.tsv     -text
+*.txt     -text
+*.json    -text
+*.jsonl   -text
+*.dat     -text
+*.gz      binary
+*.parquet binary
+*.png     binary
+
+# Everything else: Unix line endings in the repository
+*.md    text eol=lf
+*.py    text eol=lf
+*.yaml  text eol=lf
+*.dqdl  text eol=lf
+*.xlsx    binary
+*.dax   text eol=lf
